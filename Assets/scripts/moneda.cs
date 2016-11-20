@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class moneda : MonoBehaviour {
 	// función para controlar cuando un objeto entra en el trigger
