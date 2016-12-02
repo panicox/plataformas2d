@@ -11,13 +11,14 @@ public class player1_script : MonoBehaviour {
 	private Animator animator;
 	private Rigidbody2D rb;
 	private GameControlScript gcs;
+	private AudioSource audio;
 
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
 		rb = GetComponent<Rigidbody2D> ();
 		gcs = GameObject.Find ("GameControl").GetComponent<GameControlScript> (); 
-
+		audio = GetComponent <AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -70,6 +71,9 @@ public class player1_script : MonoBehaviour {
 		if(col.gameObject.tag == "muerte"){
 			//gcs.respawn ();
 			Instantiate(particulas_muerte, transform.position, transform.rotation);
+		}
+		if (col.gameObject.tag == "moneda") {
+			audio.Play ();
 		}
 	}
 		
